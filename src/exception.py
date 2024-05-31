@@ -48,7 +48,7 @@ class Custom_Exception(Exception):
         """
         return self.error_message
      
-
+'''
 if __name__ == "__main__":
     # Example usage of the custom exception
     try:
@@ -56,3 +56,4 @@ if __name__ == "__main__":
     except Exception as e:
         logging.info("Divide by zero")
         raise Custom_Exception(e, sys)
+'''
