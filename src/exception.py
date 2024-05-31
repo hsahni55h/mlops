@@ -5,6 +5,7 @@ It includes a function to format error messages with detailed information and a 
 
 import sys
 import logging
+import logger
 
 def error_message_detail(error, error_detail: sys):
     """
@@ -46,8 +47,7 @@ class Custom_Exception(Exception):
         str: The detailed error message.
         """
         return self.error_message
-    
-'''   
+     
 
 if __name__ == "__main__":
     # Example usage of the custom exception
@@ -56,4 +56,3 @@ if __name__ == "__main__":
     except Exception as e:
         logging.info("Divide by zero")
         raise Custom_Exception(e, sys)
-'''
