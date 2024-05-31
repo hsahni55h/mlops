@@ -1,0 +1,11 @@
+Steps
+
+1. Setup git repo
+2. create an environment and activate it
+3. create the readme
+4. create the gitignore
+5. create the requiremnts.txt with "-e ."
+6. create the setup.py file
+7. create a src folder with __init__.py. We want to have this as a package and for that we have the __init__.py file. 
+    wherever we have this file it will be considered as a package and will be build. Then we can import it.
+8. pip install - r requiremnts.txt, with this the packages should be installed and then .egg-info will be created.
