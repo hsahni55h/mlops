@@ -4,8 +4,8 @@ It includes a function to format error messages with detailed information and a 
 """
 
 import sys
-import logging
-import logger
+from src.logger import logging
+
 
 def error_message_detail(error, error_detail: sys):
     """
