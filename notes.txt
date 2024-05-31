@@ -1,5 +1,7 @@
 Steps
 
+## Part 1
+
 1. Setup git repo
 2. create an environment and activate it
 3. create the readme
@@ -9,3 +11,22 @@ Steps
 7. create a src folder with __init__.py. We want to have this as a package and for that we have the __init__.py file. 
     wherever we have this file it will be considered as a package and will be build. Then we can import it.
 8. pip install - r requiremnts.txt, with this the packages should be installed and then .egg-info will be created.
+
+## Part 2
+
+1. Create a components folder inside src with the following files:
+    - __init__.py
+    - data_ingestion.py
+    - data_transformation.py
+    - model_trainer.py
+
+2. Create a pipeline folder inside src with the following files:
+    - __init__.py
+    - train_pipeline.py
+    - predict_pipeline.py
+
+3. create the following files inside the src folder
+    - exception.py
+    - logger.py
+    - utils.py
+    

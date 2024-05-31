@@ -1,0 +1,30 @@
+# Used Packages Explanation
+
+## setuptools
+
+### from setuptools import find_packages, setup
+**Purpose**: These functions are used for packaging Python projects.
+
+- **find_packages()**: Automatically discovers all packages and sub-packages within the project directory. It is used to include them in the package distribution without having to list them manually.
+- **setup()**: The primary way to configure and distribute a Python package. It takes various arguments that specify the metadata and options for the package.
+
+## typing
+
+### from typing import List
+**Purpose**: This is used for type hinting, which helps in specifying the expected data types of variables and function return values.
+
+- **List**: It is used here to specify that the `get_requirements` function returns a list of strings.
+
+
+## logging
+**Purpose**: Used to configure and use loggers to output messages about the operation of a program.
+
+
+## os
+**Purpose**: Used to interact with the operating system, specifically to create directories and paths.
+
+
+## datetime
+**Purpose**: Used to get the current date and time for timestamping log files.
+
+
