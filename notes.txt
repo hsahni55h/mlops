@@ -29,4 +29,16 @@ Steps
     - exception.py
     - logger.py
     - utils.py
-    
+
+
+## Part 3
+
+1. Choosing the problem statement and the dataset
+
+    - Understanding the Problem Statement
+    - Data Collection
+    - Data Checks to perform
+    - Exploratory data analysis
+    - Data Pre-Processing
+    - Model Training
+    - Choose best model
