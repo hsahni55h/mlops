@@ -27,6 +27,8 @@
 ## datetime
 **Purpose**: Used to get the current date and time for timestamping log files.
 
+##ColumnTransformer, SimpleImputer, Pipeline, OneHotEncoder, StandardScaler from sklearn
+**Purpose**: Utilities for building and applying preprocessing pipelines.
 
-
-
+##save_object from src.utils
+**Purpose**: Utility function to save objects to disk.
