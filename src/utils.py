@@ -1,6 +1,7 @@
 """
 This file contains utility functions used across the project. 
 It includes functionality to save objects to disk, ensuring that important objects such as models and preprocessors can be persisted and later retrieved.
+
 """
 
 import os
@@ -11,6 +12,7 @@ import pandas as pd
 import dill
 import pickle
 from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 from src.exception import Custom_Exception
 
@@ -40,7 +42,7 @@ def save_object(file_path, obj):
         # Raise a custom exception if any error occurs
         raise Custom_Exception(e, sys)
 
-def evaluate_models(X_train, y_train, X_test, y_test, models):
+def evaluate_models(X_train, y_train, X_test, y_test, models, param):
     """
     Evaluate multiple models and return a report with their performance on the test set.
 
@@ -50,6 +52,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models):
     X_test: Test data features.
     y_test: Test data target.
     models (dict): A dictionary containing model names as keys and instantiated model objects as values.
+    param (dict): A dictionary containing the hyperparameters for each model.
 
     Returns:
     dict: A report containing the test R^2 scores for each model.
@@ -62,8 +65,14 @@ def evaluate_models(X_train, y_train, X_test, y_test, models):
 
         for i in range(len(list(models))):
             model = list(models.values())[i]
+            para = param[list(models.keys())[i]]
 
-            # Train the model on the training data
+            # Perform grid search to find the best hyperparameters
+            gs = GridSearchCV(model, para, cv=3)
+            gs.fit(X_train, y_train)
+
+            # Set the best parameters found by grid search
+            model.set_params(**gs.best_params_)
             model.fit(X_train, y_train)
 
             # Predict on the training data
