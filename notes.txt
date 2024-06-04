@@ -7,12 +7,12 @@ Steps
 3. create the readme
 4. create the gitignore
 5. create the requiremnts.txt with "-e ."
-6. create the setup.py file
+6. create the setup.py file. This file has the project information and also function to install all the packages mentioned in requirements.txt.
 7. create a src folder with __init__.py. We want to have this as a package and for that we have the __init__.py file. 
     wherever we have this file it will be considered as a package and will be build. Then we can import it.
 8. pip install - r requiremnts.txt, with this the packages should be installed and then .egg-info will be created.
 
-## Part 2
+## Part 2  (project structure)
 
 1. Create a components folder inside src with the following files:
     - __init__.py
@@ -33,7 +33,12 @@ Steps
 
 ## Part 3
 
-1. Choosing the problem statement and the dataset
+Choosing the problem statement and the dataset. Then we do the following to understand the dataset in a better way.
+
+Creted a folder named notebook:
+ - with the folder created a data folder with the dataset
+ - another file called EDA_student_perfomance (Exploratory data analysis) with the insights of the dataset
+ - another file called model_training
 
     - Understanding the Problem Statement
     - Data Collection
@@ -42,3 +47,11 @@ Steps
     - Data Pre-Processing
     - Model Training
     - Choose best model
+
+
+## Part 4
+DATA INGESTION
+
+
+## Part 4
+DATA TRANSFORMATION

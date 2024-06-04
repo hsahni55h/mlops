@@ -18,7 +18,7 @@ def error_message_detail(error, error_detail: sys):
     Returns:
     str: A formatted string containing the file name, line number, and error message.
     """
-    _, _, exec_tb = error_detail.exc_info()
+    _, _, exec_tb = error_detail.exc_info()  # exec_tb has all the information on which file, line mumber the exception has occured
     file_name = exec_tb.tb_frame.f_code.co_filename
     error_message = "Error occurred in python script name [{0}] line number [{1}] error message [{2}]".format(
         file_name, exec_tb.tb_lineno, str(error))
