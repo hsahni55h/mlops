@@ -1,6 +1,7 @@
 """
 This file handles the data transformation process for the project. 
 It includes functionality to create preprocessing pipelines for numerical and categorical features, and to apply these transformations to the training and test datasets.
+
 """
 
 import sys
@@ -59,17 +60,17 @@ class DataTransformation:
             # Pipeline for numerical features
             num_pipeline = Pipeline(
                 steps=[
-                    ("imputer", SimpleImputer(strategy="median")),
-                    ("scaler", StandardScaler())
+                    ("imputer", SimpleImputer(strategy="median")),  # Fills missing values with the median of the column
+                    ("scaler", StandardScaler())  # Standardizes the numerical features to have mean=0 and variance=1
                 ]
             )
 
             # Pipeline for categorical features
             cat_pipeline = Pipeline(
                 steps=[
-                    ("imputer", SimpleImputer(strategy="most_frequent")),
-                    ("one_hot_encoder", OneHotEncoder()),
-                    ("scaler", StandardScaler(with_mean=False))
+                    ("imputer", SimpleImputer(strategy="most_frequent")),  # Fills missing values with the most frequent value in the column
+                    ("one_hot_encoder", OneHotEncoder()),  # Converts categorical variables into one-hot encoded format
+                    ("scaler", StandardScaler(with_mean=False))  # Standardizes the encoded categorical features
                 ]
             )
 
@@ -78,14 +79,14 @@ class DataTransformation:
 
             # Combine pipelines into a single preprocessor
             preprocessor = ColumnTransformer(
-                [
-                    ("num_pipeline", num_pipeline, numerical_columns),
-                    ("cat_pipeline", cat_pipeline, categorical_columns)
+                transformers=[
+                    ("num_pipeline", num_pipeline, numerical_columns),  # Apply num_pipeline to numerical columns
+                    ("cat_pipeline", cat_pipeline, categorical_columns)  # Apply cat_pipeline to categorical columns
                 ]
             )
 
             return preprocessor
-        
+
         except Exception as e:
             raise Custom_Exception(e, sys)
 
@@ -148,9 +149,4 @@ class DataTransformation:
         except Exception as e:
             raise Custom_Exception(e, sys)
 
-if __name__ == "__main__":
-    # Example usage to initiate data transformation
-    data_transformation = DataTransformation()
-    train_path = "path/to/train.csv"  # Replace with actual path
-    test_path = "path/to/test.csv"  # Replace with actual path
-    data_transformation.initiate_data_transformation(train_path, test_path)
+
