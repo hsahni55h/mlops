@@ -55,3 +55,13 @@ DATA INGESTION
 
 ## Part 4
 DATA TRANSFORMATION
+
+## Part 5
+Model trainer and Utils
+
+## Part 6
+app.py and index.html, home.html
+predict_pipeline
+
+
+
